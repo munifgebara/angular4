@@ -1,0 +1,9 @@
+<div class="panel panel-primary">
+<p>
+  Cadastro de Produtos
+</p>
+
+<app-edita [objeto]="selecionado" (save)="save($event)" (clear)="clear()"></app-edita>
+<app-lista [objetos]="lista" (edit)="edit($event)" (remove)="remove($event)"></app-lista>
+
+</div>

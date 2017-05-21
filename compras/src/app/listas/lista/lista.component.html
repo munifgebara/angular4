@@ -1,0 +1,20 @@
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <tr *ngFor="let objeto of objetos">
+          <td>
+            {{objeto.nome}}
+          </td>
+          <td>{{objeto.produtos}}</td>
+          <td>
+            <button (click)="onEdit(objeto)" class="btn btn-primary">
+              <span class="glyphicon glyphicon-pencil"></span>
+              <span class="hidden-xs">Editar</span>
+            </button>
+            <button (click)="onRemove(objeto)" class="btn btn-danger">
+              <span class="glyphicon glyphicon-trash"></span>
+              <span class="hidden-xs">Excluir</span>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
