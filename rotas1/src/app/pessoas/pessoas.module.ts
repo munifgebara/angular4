@@ -6,10 +6,12 @@ import { CrudComponent } from './crud/crud.component';
 import { ListaComponent } from './lista/lista.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
     PessoasRoutingModule
+
   ],
   declarations: [CrudComponent, ListaComponent, DetalhesComponent]
 })

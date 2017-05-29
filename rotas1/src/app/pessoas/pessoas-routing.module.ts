@@ -5,13 +5,18 @@ import { CrudComponent } from './crud/crud.component';
 import { ListaComponent } from './lista/lista.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 
+
+import {ProdutosModule} from '../produtos/produtos.module';
+
+
+
 const routes: Routes = [
   {
     path:'pessoas',
     component:CrudComponent,
     children:[
       { path:'',component:ListaComponent },
-      { path:'detalhes',component:DetalhesComponent}
+      { path:'detalhes',component:DetalhesComponent},
     ]
   }
 ];
