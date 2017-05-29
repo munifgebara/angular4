@@ -1,0 +1,2 @@
+<button (click)="login()" *ngIf="!autenticacaoService.estaLogado" >Login</button>
+<button (click)="logout()" *ngIf="autenticacaoService.estaLogado" >Logout</button>
