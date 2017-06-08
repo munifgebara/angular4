@@ -6,7 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {AccordionModule,GrowlModule} from 'primeng/primeng';     //accordion and accordion tab
+import { AccordionModule,GrowlModule, DataListModule} from 'primeng/primeng';     //accordion and accordion tab
+import { CategoriaService} from './categoria.service';
+import { ProdutoService} from './produto.service';
+import { PedidoService} from './pedido.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,9 @@ import {AccordionModule,GrowlModule} from 'primeng/primeng';     //accordion and
     HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AccordionModule,GrowlModule
+    AccordionModule,GrowlModule,DataListModule
   ],
-  providers: [],
+  providers: [CategoriaService,ProdutoService,PedidoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
