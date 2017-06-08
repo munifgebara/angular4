@@ -11,4 +11,12 @@ import { CrudcategoriaComponent } from './crudcategoria/crudcategoria.component'
   ],
   declarations: [CrudcategoriaComponent]
 })
-export class CategoriaModule { }
+export class CategoriaModule { 
+   
+   constructor(){
+     console.log("CategoriaModule");
+
+   }
+
+
+}

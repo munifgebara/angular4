@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AccordionModule,GrowlModule, DataListModule} from 'primeng/primeng';     //accordion and accordion tab
+import { ToolbarModule,ButtonModule,SplitButtonModule} from 'primeng/primeng';
 import { CategoriaService} from './categoria.service';
 import { ProdutoService} from './produto.service';
 import { PedidoService} from './pedido.service';
+import { CategoriaModule} from './categoria/categoria.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,11 @@ import { PedidoService} from './pedido.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    CategoriaModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AccordionModule,GrowlModule,DataListModule
+    AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule
+    
   ],
   providers: [CategoriaService,ProdutoService,PedidoService],
   bootstrap: [AppComponent]
