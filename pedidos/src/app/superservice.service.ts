@@ -13,8 +13,7 @@ export class SuperService {
   }
 
   add(objeto) {
-    const json = JSON.stringify(objeto);
-    return this.http.post(`${this.baseUrl}/${this.collection}`, json)
+    return this.http.post(`${this.baseUrl}/${this.collection}`, objeto)
       .toPromise()
       .catch(this.errorHandler);
   }
@@ -32,8 +31,8 @@ export class SuperService {
   }
 
   update(objeto) {
-    return this.http.patch(`${this.baseUrl}/${this.collection}/${objeto.id}`, objeto)
-      .toPromise()
+    return this.http.put(`${this.baseUrl}/${this.collection}/${objeto.id}`, objeto)
+      .toPromise().then(response=>response.json())
       .catch(this.errorHandler);
   }
 

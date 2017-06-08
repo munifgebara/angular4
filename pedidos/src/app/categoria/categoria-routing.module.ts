@@ -12,7 +12,7 @@ const routes: Routes = [
 })
 export class CategoriaRoutingModule { 
  constructor(){
-     console.log("CategoriaRoutingModule");
+     
 
    }
 
