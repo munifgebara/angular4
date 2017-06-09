@@ -8,6 +8,7 @@ import { ToolbarModule,ButtonModule,SplitButtonModule} from 'primeng/primeng';
 import { DataTableModule,SharedModule} from 'primeng/primeng';
 import { InputTextModule} from 'primeng/primeng';
 import {PanelModule} from 'primeng/primeng';
+import {AutoCompleteModule} from 'primeng/primeng';
 
 import { ProdutoRoutingModule } from './produto-routing.module';
 import { CrudComponent } from './crud/crud.component';
@@ -20,7 +21,7 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
     ProdutoRoutingModule,
     BrowserAnimationsModule,
     AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule,
-    DataTableModule,SharedModule,InputTextModule
+    DataTableModule,SharedModule,InputTextModule,AutoCompleteModule
 
   ],
   declarations: [CrudComponent, ListaComponent, DetalhesComponent]

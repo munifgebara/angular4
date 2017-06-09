@@ -9,5 +9,10 @@ export class CategoriaService extends SuperService{
     super('categoria',http);
    }
 
+  filtra(filtro):Promise<any> {
+    return this.http.get(`${this.baseUrl}/${this.collection}?searchFields=nome&q=${filtro}`)
+      .toPromise().then(response=>response.json())
+      .catch(this.errorHandler);
+  }
   
 }
