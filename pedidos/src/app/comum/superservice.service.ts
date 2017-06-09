@@ -2,7 +2,7 @@ import { Http, Headers, Response } from '@angular/http';
 
 export class SuperService {
 
-  protected baseUrl = 'http://23.239.2.85/pedidos-api/api';
+  protected baseUrl = 'http://127.0.0.1:8084/pedidos-api/api';
   protected collection = '';
   protected http:Http;
 

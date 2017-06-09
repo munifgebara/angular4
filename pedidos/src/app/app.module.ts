@@ -13,6 +13,7 @@ import { ProdutoService} from './produto.service';
 import { PedidoService} from './pedido.service';
 import { CategoriaModule} from './categoria/categoria.module';
 import { ProdutoModule} from './produto/produto.module';
+import { PedidoModule} from './pedido/pedido.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ProdutoModule} from './produto/produto.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CategoriaModule,ProdutoModule,
+    CategoriaModule,ProdutoModule,PedidoModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule

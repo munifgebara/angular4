@@ -10,10 +10,7 @@
     <h3>Quantidade</h3>
     <input id="in2" type="text" size="30" pInputText [(ngModel)]="selecionado.quantidade">
     <h3>Categoria</h3>
-<p-autoComplete [(ngModel)]="selecionado.categoria" [suggestions]="categorias" 
-(completeMethod)="filtrarCategorias($event)" [size]="30"
-    [minLength]="1" [dropdown]="true" (onDropdownClick)="atualizaCategorias($event)"
-    field="nome"
-    >
-</p-autoComplete>
+    <p-autoComplete [(ngModel)]="selecionado.categoria" [suggestions]="categorias" (completeMethod)="filtrarCategorias($event)"
+        [size]="30" [minLength]="1" [dropdown]="true" (onDropdownClick)="atualizaCategorias($event)" field="nome">
+    </p-autoComplete>
 </p-panel>
