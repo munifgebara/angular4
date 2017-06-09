@@ -1,8 +1,3 @@
-<p>
-  crudcategoria works!
-</p>
-<button pButton type="button" label="Novo" icon="fa-plus" (click)="salva()" ></button>
-<button pButton type="button" label="Altera" icon="fa-plus" (click)="altera()" ></button>
-<button pButton type="button" label="Excluir" icon="fa-plus" (click)="exclui()" ></button>
-
 <router-outlet></router-outlet>
+
+<p-growl [(value)]="msgs" sticky="sticky"></p-growl>

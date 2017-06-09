@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoriaService} from '../../categoria.service';
+import { Message } from 'primeng/primeng';
+import { CategoriaService} from '../../categoria.service';
 
 @Component({
   selector: 'crudcategoria',
@@ -8,43 +9,20 @@ import {CategoriaService} from '../../categoria.service';
 })
 export class CrudcategoriaComponent implements OnInit {
 
-  listaCategoria:any[];
+  msgs: Message[] = [];
 
-  constructor(private categoriaService:CategoriaService) { }
+  constructor(private service: CategoriaService) {
+  }
 
   ngOnInit() {
-    this.atualiza();
+    this.service.errorHandler = error => this.error(error);
   }
 
-  salva(){
-    let objeto={
-      nome:"nova"
-    }
-    this.categoriaService.add(objeto).then(response=>{
-      console.log(response);
-    });
-  }
-
-  altera(){
-    let objeto={id:3,oi:null,version:1,nome:"nova3"}
-    this.categoriaService.update(objeto).then(response=>{
-      console.log(response);
-    });
-
-  }
-
-  exclui(){
-    let objeto={id:3}
-    this.categoriaService.remove(objeto).then(response=>{
-      console.log(response);
-    });
-  }
-
-
-  atualiza(){
-    this.categoriaService.getAll().then(response=>{
-      this.listaCategoria=response.values;
-    });
+  error(erro) {
+    console.log(erro);
+    this.msgs = [];
+    this.msgs.push({severity:'error', summary:'Error Message', detail:erro});
+    
   }
 
 }

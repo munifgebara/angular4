@@ -1,0 +1,11 @@
+<p-panel >
+      <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title">Categoria</span>
+            <p-splitButton [style]="{'float':'right'}" label="Salvar" (onClick)="salvar()" [model]="items"></p-splitButton>
+        </div>
+    </p-header>
+<h3>Nome</h3>
+<input id="in" type="text" size="30" pInputText [(ngModel)]="selecionado.nome"> 
+</p-panel>
+
