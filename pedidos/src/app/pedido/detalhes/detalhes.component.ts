@@ -25,6 +25,9 @@ export class DetalhesComponent extends SuperDetalhes implements OnInit {
 
   inserirProduto(){
      console.log(this.selecionado.itens,this.produto);
+     if (!this.selecionado.itens){
+       this.selecionado.itens=[];
+     }
      this.selecionado.itens.push({produto:this.produto,quantidade:1});
      this.produto=null;
   }
