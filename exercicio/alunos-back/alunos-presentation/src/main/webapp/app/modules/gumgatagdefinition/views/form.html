@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel gmd">
+            <div class="panel-heading"><label class="control-label" gumga-translate-tag="gumgatagdefinition"></label></div>
+            <div class="panel-body">
+                <form name="forms" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <gmd-input>
+                                <input type="text"
+                                       gumga-error
+                                       name="gumgatagdefinition.name"
+                                       ng-model="gumgatagdefinition.data.name"
+                                       class="form-control gmd"/>
+                                <span class="bar"></span>
+                                <label class="control-label" gumga-translate-tag="gumgatagdefinition.name"></label>
+                            </gmd-input>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <gmd-input>
+                                <input type="text"
+                                       name="attributes"
+                                       ng-model="novoAtributo"
+                                       class="form-control gmd"/>
+                                <span class="bar"></span>
+                                <label class="control-label" gumga-translate-tag="gumgatagdefinition.newattribute">Novo atributo</label>
+                            </gmd-input>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn gmd raised btn-primary" ng-click="novo()">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div ng-repeat="v in gumgatagdefinition.data.attributes">
+            <span class="col-md-1">
+                {{v.name}}
+                <a class="text-danger" ng-click="remover($index)"><span class="glyphicon glyphicon-remove"></span> </a>
+            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn gmd raised btn-primary pull-right"
+                                    ng-click="gumgatagdefinition.methods.put(gumgatagdefinition.data)">
+                                <i class="glyphicon glyphicon-floppy-saved"></i>
+                                Salvar
+                            </button>
+                            <button type="button" class="btn gmd raised btn-warning pull-right" ui-sref="gumgatagdefinition.list"
+                                    style="margin-right: 1%">
+                                <i class="glyphicon glyphicon-floppy-remove"></i>
+                                Voltar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

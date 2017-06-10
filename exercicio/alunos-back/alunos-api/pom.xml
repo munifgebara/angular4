@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>br.com.munif</groupId>
+        <artifactId>alunos</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>alunos-api</artifactId>
+    <name>alunos-api</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <packaging>jar</packaging>
+    <dependencies>
+        <!-- DEPENDENCIAS de Módulos    -->
+        <dependency>
+            <groupId>br.com.munif</groupId>
+            <artifactId>alunos-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.munif</groupId>
+            <artifactId>alunos-gateway</artifactId>
+        </dependency>
+        <!-- DEPENDENCIAS do Framework GUMGA    -->
+        <dependency>
+            <groupId>io.gumga</groupId>
+            <artifactId>gumga-domain</artifactId>
+        </dependency>
+        <!-- DEPENDENCIAS em geral-->
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <ignoreMissingFile>false</ignoreMissingFile>
+                    <file>${basedir}/src/main/webapp/index_src.html</file>
+                    <outputFile>${basedir}/src/main/webapp/index.html</outputFile>
+                    <regex>false</regex>
+                    <replacements>
+                        <replacement>
+                            <token>%PROJECT_VERSION%</token>
+                            <value>${project.version}</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>alunos-api</warName>
+                    <!-- Depois, ignorar todos os arquivos JavaScript e CSS pois eles serão copiados pelo requirejs-maven-plugin -->
+                    <!-- <warSourceExcludes>**/*.js,**/*.css</warSourceExcludes> -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>make-a-war</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>war</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

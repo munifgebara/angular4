@@ -1,0 +1,53 @@
+{
+  "name": "gumgaframework",
+  "version": "1.0.0",
+  "description": "description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://gumga.com.br"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "browser-sync-client": "^2.4.4",
+    "complexity": "0.0.5",
+    "escomplex-plugin-metrics-module": "0.0.13",
+    "escomplex-plugin-metrics-project": "0.0.13",
+    "escomplex-plugin-syntax-babylon": "0.0.13",
+    "escomplex-plugin-syntax-estree": "0.0.13",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-ng-annotate": "^0.5.3",
+    "gulp-plato": "^1.0.2",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.2.0",
+    "hooks": "^0.3.2",
+    "immutable": "^3.8.1",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.5",
+    "karma-requirejs": "^0.2.2",
+    "lodash": "^4.17.4",
+    "ng-annotate": "^1.2.1",
+    "psi": "^1.0.6",
+    "rx": "^4.1.0",
+    "typhonjs-ast-walker": "^0.2.0",
+    "typhonjs-escomplex": "0.0.12",
+    "typhonjs-escomplex-commons": "0.0.16",
+    "typhonjs-escomplex-module": "0.0.12",
+    "typhonjs-escomplex-project": "0.0.12",
+    "typhonjs-plugin-manager": "0.0.6",
+    "uuid": "^3.0.1"
+  },
+  "dependencies": {
+    "ng-annotate": "^1.2.1"
+  }
+}

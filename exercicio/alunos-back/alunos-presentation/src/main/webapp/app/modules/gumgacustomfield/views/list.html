@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel gmd">
+      <div class="panel-heading"><label class="control-label" gumga-translate-tag="gumgacustomfield"></label></div>
+      <div class="panel-body">
+
+        <div class="row">
+          <div class="col-md-5">
+            <a ui-sref="gumgacustomfield.insert" class="btn gmd raised btn-primary">
+              <i class="glyphicon glyphicon-plus"></i>
+              Novo
+            </a>
+            <button type="button" class="btn gmd raised btn-danger" ng-click="gumgacustomfield.methods.delete(selectedValues)">
+              <i class="glyphicon glyphicon-trash"></i>
+              Remover
+            </button>
+          </div>
+          <div class="col-md-7">
+            <gumga-query  search="gumgacustomfield.methods.search(field,param)"
+                          advanced-search="gumgacustomfield.methods.advancedSearch(param)"
+                          search-text="gumgacustomfield">
+
+              <search-field field="clazz" label="clazz" select="true" ></search-field>
+              <search-field field="name" label="name" select="true" ></search-field>
+              <search-field field="description" label="description" select="true" ></search-field>
+              <search-field field="active" label="active" select="false" ></search-field>
+              <search-field field="type" label="type" select="false" ></search-field>
+
+              <advanced-search-field label="id" field="id" type="string"></advanced-search-field>
+              <advanced-search-field label="clazz" field="clazz" type="string"></advanced-search-field>
+              <advanced-search-field label="name" field="name" type="string"></advanced-search-field>
+              <advanced-search-field label="description" field="description" type="string"></advanced-search-field>
+              <advanced-search-field label="active" field="active" type="boolean"></advanced-search-field>
+              <advanced-search-field label="type" field="type" type="string"></advanced-search-field>
+              <advanced-search-field label="validationdescription" field="validationdescription" type="string"></advanced-search-field>
+              <advanced-search-field label="validationscript" field="validationscript" type="string"></advanced-search-field>
+              <advanced-search-field label="defaultvaluescript" field="defaultvaluescript" type="string"></advanced-search-field>
+              <advanced-search-field label="options" field="options" type="string"></advanced-search-field>
+              <advanced-search-field label="optionvaluefield" field="optionvaluefield" type="string"></advanced-search-field>
+              <advanced-search-field label="optionlabelfield" field="optionlabelfield" type="string"></advanced-search-field>
+              <advanced-search-field label="optionscollection" field="optionscollection" type="string"></advanced-search-field>
+              <advanced-search-field label="visualizationorder" field="visualizationorder" type="number"></advanced-search-field>
+              <advanced-search-field label="fieldgroup" field="fieldgroup" type="string"></advanced-search-field>
+              <advanced-search-field label="translatekey" field="translatekey" type="string"></advanced-search-field>
+            </gumga-query>
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <gumga-query-action
+                    entity="gumgacustomfield"
+                    selected="selectedValues"
+                    query="query"
+                    beyond="beyond"
+                    actions="actions"
+                    on-action="action(queryaction)">
+            </gumga-query-action>
+          </div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-12">
+            <gumga-list class="table-striped table-condensed"
+                        sort="gumgacustomfield.methods.sort(field, dir)"
+                        data="gumgacustomfield.data"
+                        configuration="tableConfig"
+                        page-size="gumgacustomfield.pageSize"
+                        page-position="bottom"
+                        page-align="flex-end"
+                        count="gumgacustomfield.count"
+                        page-model="page"
+                        on-page-change="gumgacustomfield.methods.get(page, pageSize)">
+            </gumga-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

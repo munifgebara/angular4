@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="bower_components/gumga-login/dist/gumga-login.min.css">
+
+<gl-login-header
+        register="app.login"
+        login="app.login"
+        background="resources/images/background-login.png"
+        logo="resources/images/gumga.png"
+        title="Gumga"
+></gl-login-header>
+
+<gl-login on-login="vm.onLogin(user, organizations)" configuration="vm.configuration">
+    <!--<div class="divider"><strong class="divider-title">ou entre com</strong></div>-->
+    <!--<gl-login-facebook app-key="" on-login="vm.loginFacebook(data)"></gl-login-facebook>-->
+    <!--<gl-login-google app-key=""-->
+                     <!--on-login="vm.loginGooglePlus(data)"-->
+                     <!--client-id="">-->
+    <!--</gl-login-google>-->
+</gl-login>

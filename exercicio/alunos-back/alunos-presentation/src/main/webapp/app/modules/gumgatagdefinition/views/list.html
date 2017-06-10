@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel gmd">
+            <div class="panel-heading"><label class="control-label" gumga-translate-tag="gumgatagdefinition"></label></div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <a ui-sref="gumgatagdefinition.insert" class="btn gmd raised btn-primary">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            Novo
+                        </a>
+                        <button type="button" class="btn gmd raised btn-danger" ng-click="gumgatagdefinition.methods.delete(selectedValues)">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            Remover
+                        </button>
+                    </div>
+
+                    <div class="col-sm-7">
+                        <gumga-query
+                                search="gumgatagdefinition.methods.search(field,param)"
+                                advanced-search="gumgatagdefinition.methods.advancedSearch(param)"
+                                search-text="gumgatagdefinition">
+
+                            <search-field field="name" label="name" select="true" ></search-field>
+                            <search-field field="attributes" label="attributes" select="true" ></search-field>
+
+                            <advanced-search-field  label="id" field="id" type="string"></advanced-search-field>
+                            <advanced-search-field  label="name" field="name" type="string"></advanced-search-field>
+                            <advanced-search-field  label="attributes" field="attributes" type="string"></advanced-search-field>
+
+                        </gumga-query>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <gumga-query-action
+                                entity="gumgatagdefinition"
+                                selected="selectedValues"
+                                query="query"
+                                beyond="beyond"
+                                actions="actions"
+                                on-action="action(queryaction)">
+                        </gumga-query-action>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <gumga-list class="table-striped table-condensed"
+                                    sort="gumgatagdefinition.methods.sort(field, dir)"
+                                    data="gumgatagdefinition.data"
+                                    configuration="tableConfig"
+                                    page-size="gumgatagdefinition.pageSize"
+                                    page-position="bottom"
+                                    page-align="flex-end"
+                                    count="gumgatagdefinition.count"
+                                    page-model="page"
+                                    on-page-change="gumgatagdefinition.methods.get(page, pageSize)">
+                        </gumga-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

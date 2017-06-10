@@ -1,0 +1,74 @@
+<div ng-controller="BaseController">
+
+    <header class="gl-header">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="cursor: pointer;" data-ng-click="navCollapse()">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <a class="navbar-brand" style="cursor: pointer;" data-ng-click="navCollapse()">
+                        App
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav organizations" title="Trocar de Organização">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">domain</i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control gmd" data-ng-model="org_search" placeholder="Pesquisar...">
+                                        <div class="bar"></div>
+                                    </div>
+                                </li>
+                                <li data-ng-repeat="org in organizations | filter: org_search">
+                                    <a href="" ng-click="changeOrganization(org)" >{{org.name}}
+                                        <span class="glyphicon glyphicon-ok" ng-show="org.name == orgAtual.organization || org.name == orgAtual.name"></span>
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                {{info.name}} <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a>Trocar senha</a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a style="cursor: pointer" ng-click="logout()">Sair</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main style="margin-bottom: 50px;">
+        <div class="container-fluid content">
+            <div ui-view></div>
+        </div>
+    </main>
+    <nav class="gl-nav collapsed">
+        <div class="navbar-header" style="float: none;">
+            <a class="navbar-brand" style="cursor: pointer;" data-ng-click="navCollapse()">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <gl-menu menu="gumgaMenu" keys="keysJsonUrl"></gl-menu>
+    </nav>
+    <footer class="gl-footer footer fixed">
+        <p>App</p>
+    </footer>
+
+</div>

@@ -1,0 +1,31 @@
+[
+	{
+		"type": "item",
+		"label": "Welcome",
+		"state": "welcome",
+		"icon": "home",
+		"key": "CRUD-BASE"
+	},
+	{
+		"type": "item",
+		"label": "Configurations",
+		"icon": "settings",
+		"key": "CONFIGURATION",
+		"children": [
+			{
+				"type": "item",
+				"label": "Custom Fields",
+				"key": "CUSTOMFIELDS",
+				"state": "gumgacustomfield.list",
+				"icon": "text_fields"
+			},
+			{
+				"type": "item",
+				"label": "Tags",
+				"key": "TAGS",
+				"state": "gumgatagdefinition.list",
+				"icon": "label"
+			}
+		]
+	}
+]
