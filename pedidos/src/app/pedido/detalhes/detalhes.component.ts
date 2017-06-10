@@ -7,6 +7,7 @@ import { SuperDetalhes } from '../../comum/superdetalhes.component';
 
 
 
+
 @Component({
   selector: 'app-detalhes',
   templateUrl: './detalhes.component.html',
@@ -20,14 +21,11 @@ export class DetalhesComponent extends SuperDetalhes implements OnInit {
 
   constructor(service: PedidoService, router: Router, route: ActivatedRoute, private produtoService: ProdutoService) {
     super(service, router, route);
-    this.items.push({label: 'Inserir', icon: 'fa-close', command: () => {this.inserirProduto();}});
   }
 
   inserirProduto(){
      console.log(this.selecionado.itens,this.produto);
-     this.selecionado.itens.push(
-         {produto:this.produto,quantidade:1}
-     );
+     this.selecionado.itens.push({produto:this.produto,quantidade:1});
      this.produto=null;
   }
 
