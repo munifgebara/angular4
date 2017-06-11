@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { SuperService} from './comum/superservice.service';
 import { Http, Headers, Response } from '@angular/http';
+import { GumgaAutorizadorService} from './gumga-autorizador.service';
 
 @Injectable()
 export class ProdutoService extends SuperService{
 
-  constructor( http: Http) {
-    super('produto',http);
+  constructor( http: Http,a:GumgaAutorizadorService) {
+    super('produto',http,a);
    }
 
     filtra(filtro):Promise<any> {

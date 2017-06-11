@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule,Http } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -14,11 +14,15 @@ import { PedidoService} from './pedido.service';
 import { CategoriaModule} from './categoria/categoria.module';
 import { ProdutoModule} from './produto/produto.module';
 import { PedidoModule} from './pedido/pedido.module';
+import { GumgaAutorizadorService} from './gumga-autorizador.service';
+import { LoginComponent } from './login/login.component';
+import { GumgaGuardGuard } from './gumga-guard.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,13 @@ import { PedidoModule} from './pedido/pedido.module';
     AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule
     
   ],
-  providers: [CategoriaService,ProdutoService,PedidoService],
+  providers: [CategoriaService,ProdutoService,PedidoService,GumgaAutorizadorService,GumgaGuardGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+    constructor(private http:Http){
+    }
+
+}
