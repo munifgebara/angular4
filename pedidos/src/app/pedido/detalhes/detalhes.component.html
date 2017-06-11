@@ -10,7 +10,7 @@
     <h3>Pedido</h3>
 </p-panel>
 
-<p-autoComplete [(ngModel)]="produto" [suggestions]="produtos" (completeMethod)="filtrarProdutos($event)"
+<p-autoComplete name="produto" [(ngModel)]="produto" [suggestions]="produtos" (completeMethod)="filtrarProdutos($event)"
     [size]="30" [minLength]="1" [dropdown]="true" (onDropdownClick)="atualizaProdutos($event)" field="nome">
 </p-autoComplete>
  <button pButton type="button" label="Inserir" icon="fa-folder-open" (click)="inserirProduto()"></button>
@@ -20,3 +20,6 @@
     <p-column field="produto.nome" header="Produto"> </p-column>
     <p-column field="quantidade" header="Quantidade" [editable]="true"></p-column>
 </p-dataTable>
+
+
+
