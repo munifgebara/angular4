@@ -15,6 +15,7 @@ export class ListaComponent extends SuperLista implements OnInit {
     this.cols = [ {field: 'nome', header: 'Nome'}, 
     {field: 'quantidade', header: 'Quantidade'},
     {field: 'categoria.nome', header: 'Categoria'},
+    {field: 'categoria.version', header: 'Versão'},
     
     ];
   }

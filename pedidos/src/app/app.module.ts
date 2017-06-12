@@ -17,6 +17,7 @@ import { PedidoModule} from './pedido/pedido.module';
 import { GumgaAutorizadorService} from './gumga-autorizador.service';
 import { LoginComponent } from './login/login.component';
 import { GumgaGuardGuard } from './gumga-guard.guard';
+import {PanelModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { GumgaGuardGuard } from './gumga-guard.guard';
     CategoriaModule,ProdutoModule,PedidoModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule
+    AccordionModule,GrowlModule,DataListModule,ToolbarModule,ButtonModule,SplitButtonModule,PanelModule
     
   ],
   providers: [CategoriaService,ProdutoService,PedidoService,GumgaAutorizadorService,GumgaGuardGuard],
