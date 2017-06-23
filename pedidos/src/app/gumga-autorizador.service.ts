@@ -4,7 +4,7 @@ import { Http, Headers, Response } from '@angular/http';
 @Injectable()
 export class GumgaAutorizadorService {
 
-  protected loginUrl = 'http://127.0.0.1:8084/pedidos-api/public/token';
+  protected loginUrl = 'http://23.239.2.85/pedidos-api/public/token';
 
   protected token="";
   logado=false;
